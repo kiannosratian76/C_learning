@@ -2,6 +2,12 @@
 #include <string.h>
 #include <stdbool.h>
 
+
+//human Emotions 
+char Emotions[5][6] = {"see","touch","small","eat","hear"};
+//value variable for compare
+int value;
+
 /*Human Emotions Project*/
  char emotionFunc(){
    //get from user emotions
@@ -9,9 +15,24 @@
    //emotions variable
     char emotions[6];
    //user inputs
-    fgets(emotions,sizeof(emotions),stdin);
-  //return value
-  return emotions[6];  
+    //fgets(emotions,sizeof(emotions),stdin);
+    scanf("%s",&emotions);
+  int length = sizeof(Emotions) / sizeof (Emotions[0]);
+  //loop in Emotions
+  for (int i = 0; i < length ; i++ ){
+      // compare user emotions with emotions array;
+      value = strcmp(Emotions[i],emotions);
+      //print value
+      printf("%d\n",value);
+      //check value for choos func
+      if(value == 0){
+        printf("your emotions is : %s\n",emotions);
+        break;
+      }else{
+        printf("%s\nit is not human emotion;",emotions);
+        break;
+      }
+    } 
 };
 
 /*main function*/
