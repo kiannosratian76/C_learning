@@ -10,10 +10,10 @@ int main(){
 #include <stdbool.h>
 
 
-
-
-//create array emotions
-char emotionsHumans [5][5] = {"see","touch","eat","small","hear"};
+//human Emotions 
+char Emotions[5][6] = {"see","touch","small","eat","hear"};
+//value variable for compare
+int value;
 
 /*Human Emotions Project*/
  char emotionFunc(){
@@ -22,23 +22,24 @@ char emotionsHumans [5][5] = {"see","touch","eat","small","hear"};
    //emotions variable
     char emotions[6];
    //user inputs
-    fgets(emotions,sizeof(emotions),stdin);
-   //print user emotions
-   // check emotions 
-   // get lenght of array
-   int lenght = sizeof(emotionsHumans)/sizeof(emotionsHumans[0]);
-   int i = 0;
-   //loop in emotions
-   for( i  = 0 ; i < 6;i++){
-        if (emotions == emotionsHumans[i]){
-            printf("your emotions is :%s\n",emotionsHumans[i]);
-            break;
-        }else{
-            printf("its not a human emotions");
-            break;
-        }
-   }
-    return 0;
+    //fgets(emotions,sizeof(emotions),stdin);
+    scanf("%s",&emotions);
+  int length = sizeof(Emotions) / sizeof (Emotions[0]);
+  //loop in Emotions
+  for (int i = 0; i < length ; i++ ){
+      // compare user emotions with emotions array;
+      value = strcmp(Emotions[i],emotions);
+      //print value
+      printf("%d\n",value);
+      //check value for choos func
+      if(value == 0){
+        printf("your emotions is : %s\n",emotions);
+        break;
+      }else{
+        printf("%s\nit is not human emotion;",emotions);
+        break;
+      }
+    } 
 };
 
 /*main function*/
@@ -46,6 +47,9 @@ int main(){
      char emo = emotionFunc();
     // // declare function
      printf("%s",emo);
+<<<<<<< HEAD
     
+>>>>>>> human-emotions
+=======
 >>>>>>> human-emotions
 }
